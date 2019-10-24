@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
 			console.log(body.error)
 			callback("Unable to find location" , undefined)
 		} else {
-			callback(undefined, `Curren temp =  ${body.currently.temperature}` + ` and ${body.currently.precipProbability}% chance of rain `)
+			callback(undefined, `Curren temp =  ${body.currently.temperature}` + ` and ${body.currently.precipProbability}% chance of rain `  + `summary: ${body.daily.data[0].summary}`)
 		}
 	})
 }
