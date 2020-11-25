@@ -1,7 +1,10 @@
 const request = require('request')
+require('dotenv').config()
+
+
 
 const geocode = (address, callback) =>{
-	const api_key = "pk.eyJ1IjoiaGF0ZW1hY2hpbmUwMSIsImEiOiJjazFmN2Jpd28wb2FuM21vM2d1eW4yZHF0In0.-ROMyWMMA4ckuv-RHEvseQ"
+	const api_key = process.env.API_KEY
 	const weather_url =( 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?limit=1&access_token=' + api_key)
 	request({url: weather_url, json: true}, (error, {body}) =>{
 		if (error) {

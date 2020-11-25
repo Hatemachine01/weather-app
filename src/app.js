@@ -2,6 +2,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const hbs = require('hbs')
 const path = require('path')
+require('dotenv').config()
 
 
 console.log(__dirname)
